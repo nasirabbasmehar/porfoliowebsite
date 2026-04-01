@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compositing Engine | Local Business Growth Experts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Fonts: Poppins (Body) & Satoshi (Headlines) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --engine-orange: #F17131;
+            --engine-teal: #073032;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-headline {
+            font-family: 'Satoshi', sans-serif;
+            font-weight: 700;
+        }
+
+        .text-engine-orange { color: var(--engine-orange); }
+        .bg-engine-orange { background-color: var(--engine-orange); }
+        .border-engine-orange { border-color: var(--engine-orange); }
+        .hover-bg-engine-orange:hover { background-color: #d95d24; }
+        
+        .text-engine-teal { color: var(--engine-teal); }
+        .bg-engine-teal { background-color: var(--engine-teal); }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f5 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .hidden-view {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .font-black { font-weight: 900; }
+
+        .industry-card {
+            transition: all 0.3s ease;
+        }
+        .industry-card:hover {
+            background-color: var(--engine-teal);
+            color: white;
+            transform: scale(1.05);
+        }
+        .industry-card:hover .icon-container {
+            background-color: var(--engine-orange);
+            color: white;
+        }
+    </style>
+</head>
+<body class="text-gray-900 bg-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3 cursor-pointer" onclick="showView('home')">
+                    <img src="Compositingengine logo full orange.png" alt="Compositing Engine" class="logo-img">
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold uppercase tracking-wider">
+                    <button onclick="showView('home')" class="hover:text-engine-orange transition-colors">Home</button>
+                    <button onclick="showView('services')" class="hover:text-engine-orange transition-colors">Services</button>
+                    <a href="#about" onclick="showView('home')" class="hover:text-engine-orange transition-colors">About</a>
+                    <a href="#contact" class="bg-engine-orange text-white px-6 py-3 rounded-full hover-bg-engine-orange transition-all shadow-lg shadow-orange-200">Get Free Demo</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="p-2">
+                        <i data-lucide="menu" class="w-6 h-6 text-engine-teal"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 p-4 space-y-4 shadow-xl">
+            <button onclick="showView('home')" class="block w-full text-left text-lg font-medium">Home</button>
+            <button onclick="showView('services')" class="block w-full text-left text-lg font-medium">Services</button>
+            <a href="#contact" class="block text-engine-orange font-bold">Get Free Demo</a>
+        </div>
+    </nav>
+
+    <!-- VIEWS CONTAINER -->
+    <div id="main-content">
+        
+        <!-- HOME VIEW -->
+        <div id="view-home" class="fade-in">
+            <!-- Hero Section -->
+            <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden hero-gradient">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-8">
+                            <div class="inline-flex items-center gap-2 px-4 py-2 bg-orange-50 rounded-full text-engine-orange font-semibold text-xs uppercase tracking-widest">
+                                <span class="relative flex h-2 w-2">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-engine-orange opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-engine-orange"></span>
+                                </span>
+                                👉 Get Your Free Website Demo Today
+                            </div>
+                            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight text-engine-teal">
+                                Grow Your Local Business With a Website That <span class="text-engine-orange">Actually Brings Customers</span>
+                            </h1>
+                            <p class="text-lg text-gray-600 leading-relaxed max-w-xl font-medium">
+                                We design high-converting websites for plumbers, electricians, restaurants, salons, and more—so you get more calls, more bookings, and more revenue.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="#contact" class="px-10 py-5 bg-engine-orange text-white rounded-full font-bold text-lg text-center shadow-xl shadow-orange-200 hover:scale-105 transition-transform uppercase tracking-wider">Get My Free Demo</a>
+                                <button onclick="showView('services')" class="px-10 py-5 border-2 border-engine-teal rounded-full font-bold text-lg text-center text-engine-teal hover:bg-gray-50 transition-colors uppercase tracking-wider">How It Works</button>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <div class="bg-white p-4 rounded-3xl shadow-2xl relative z-10 border border-gray-100">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Local Business Dashboard" class="rounded-2xl w-full h-auto">
+                                <div class="absolute -bottom-6 -right-6 bg-engine-teal p-6 rounded-2xl shadow-xl text-white max-w-[200px]">
+                                    <p class="text-xs opacity-70 font-bold uppercase mb-1 tracking-widest">Weekly Bookings</p>
+                                    <div class="flex items-end gap-2">
+                                        <span class="text-3xl font-black tracking-tighter">+84%</span>
+                                        <i data-lucide="phone-call" class="text-engine-orange w-5 h-5 mb-1"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Services Summary -->
+            <section class="py-24 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-black mb-4 text-engine-teal">Built for Local Growth</h2>
+                        <p class="text-gray-600 font-medium">Every website we build is optimized for your specific trade.</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+                            <i data-lucide="smartphone" class="text-engine-orange w-12 h-12 mb-8"></i>
+                            <h4 class="text-2xl font-bold mb-4">Mobile-First Design</h4>
+                            <p class="text-gray-500 mb-8 leading-relaxed">Your customers find you on their phones. We ensure your site looks perfect and loads fast on every device.</p>
+                            <button onclick="showView('services')" class="text-engine-orange font-bold flex items-center gap-2 hover:gap-3 transition-all">Explore <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+                        </div>
+                        <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+                            <i data-lucide="map-pinned" class="text-engine-orange w-12 h-12 mb-8"></i>
+                            <h4 class="text-2xl font-bold mb-4">Local SEO Engine</h4>
+                            <p class="text-gray-500 mb-8 leading-relaxed">Appear at the top of Google searches when local customers are looking for your services.</p>
+                            <button onclick="showView('services')" class="text-engine-orange font-bold flex items-center gap-2 hover:gap-3 transition-all">Explore <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+                        </div>
+                        <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+                            <i data-lucide="calendar-check" class="text-engine-orange w-12 h-12 mb-8"></i>
+                            <h4 class="text-2xl font-bold mb-4">Booking Systems</h4>
+                            <p class="text-gray-500 mb-8 leading-relaxed">Seamless integration for online bookings, quotes, and direct calls to keep your calendar full.</p>
+                            <button onclick="showView('services')" class="text-engine-orange font-bold flex items-center gap-2 hover:gap-3 transition-all">Explore <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WHO WE HELP SECTION -->
+            <section class="py-24 bg-white">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="text-center max-w-3xl mx-auto mb-20">
+                        <h2 class="text-4xl md:text-5xl font-black mb-6 text-engine-teal">Who We Help</h2>
+                        <p class="text-xl text-gray-600 font-medium">We specialize in websites for high-demand local services. If you serve a local area, we can help you grow 🚀</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                        <!-- Plumbers -->
+                        <div class="industry-card bg-gray-50 p-6 rounded-2xl text-center flex flex-col items-center">
+                            <div class="icon-container w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-engine-orange mb-4">
+                                <i data-lucide="wrench" class="w-6 h-6"></i>
+                            </div>
+                            <span class="font-bold text-sm">Plumbers</span>
+                        </div>
+                        <!-- Electricians -->
+                        <div class="industry-card bg-gray-50 p-6 rounded-2xl text-center flex flex-col items-center">
+                            <div class="icon-container w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-engine-orange mb-4">
+                                <i data-lucide="zap" class="w-6 h-6"></i>
+                            </div>
+                            <span class="font-bold text-sm">Electricians</span>
+                        </div>
+                        <!-- Roofers -->
+                        <div class="industry-card bg-gray-50 p-6 rounded-2xl text-center flex flex-col items-center">
+                            <div class="icon-container w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-engine-orange mb-4">
+                                <i data-lucide="hammer" class="w-6 h-6"></i>
+                            </div>
+                            <span class="font-bold text-sm">Roofers</span>
+                        </div>
+                        <!-- Restaurants -->
+                        <div class="industry-card bg-gray-50 p-6 rounded-2xl text-center flex flex-col items-center">
+                            <div class="icon-container w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-engine-orange mb-4">
+                                <i data-lucide="utensils" class="w-6 h-6"></i>
+                            </div>
+                            <span class="font-bold text-sm">Restaurants</span>
+                        </div>
+                        <!-- Salons -->
+                        <div class="industry-card bg-gray-50 p-6 rounded-2xl text-center flex flex-col items-center">
+                            <div class="icon-container w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-engine-orange mb-4">
+                                <i data-lucide="scissors" class="w-6 h-6"></i>
+                            </div>
+                            <span class="font-bold text-sm">Salons</span>
+                        </div>
+                        <!-- Real Estate -->
+                        <div class="industry-card bg-gray-50 p-6 rounded-2xl text-center flex flex-col items-center">
+                            <div class="icon-container w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-engine-orange mb-4">
+                                <i data-lucide="key" class="w-6 h-6"></i>
+                            </div>
+                            <span class="font-bold text-sm">Real Estate</span>
+                        </div>
+                        <!-- Local Pros -->
+                        <div class="industry-card bg-gray-50 p-6 rounded-2xl text-center flex flex-col items-center">
+                            <div class="icon-container w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-engine-orange mb-4">
+                                <i data-lucide="briefcase" class="w-6 h-6"></i>
+                            </div>
+                            <span class="font-bold text-sm">Local Pros</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SERVICES VIEW -->
+        <div id="view-services" class="hidden-view fade-in">
+            <section class="pt-32 pb-20 bg-engine-teal text-white">
+                <div class="max-w-7xl mx-auto px-4 text-center">
+                    <h1 class="text-5xl md:text-7xl font-black mb-6">Expert <span class="text-engine-orange">Solutions</span></h1>
+                    <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-medium">
+                        Tailored digital strategies that help local businesses scale without the headache of complicated tech.
+                    </p>
+                </div>
+            </section>
+
+            <section class="py-24">
+                <div class="max-w-7xl mx-auto px-4 space-y-32">
+                    <div class="grid md:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <span class="text-engine-orange font-bold uppercase tracking-widest text-xs block mb-4">Revenue Focused</span>
+                            <h2 class="text-4xl md:text-5xl font-black mb-6 text-engine-teal">Conversion Optimized Design</h2>
+                            <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                                We don't just build websites; we build lead-generation machines. Every button and paragraph is placed to turn a visitor into a paying customer.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="flex items-center gap-2 font-semibold text-engine-teal"><i data-lucide="check-circle-2" class="text-engine-orange w-5 h-5"></i><span>Click-to-Call</span></div>
+                                <div class="flex items-center gap-2 font-semibold text-engine-teal"><i data-lucide="check-circle-2" class="text-engine-orange w-5 h-5"></i><span>Service Landing Pages</span></div>
+                                <div class="flex items-center gap-2 font-semibold text-engine-teal"><i data-lucide="check-circle-2" class="text-engine-orange w-5 h-5"></i><span>Fast Loading</span></div>
+                                <div class="flex items-center gap-2 font-semibold text-engine-teal"><i data-lucide="check-circle-2" class="text-engine-orange w-5 h-5"></i><span>Google Maps Integration</span></div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 rounded-[2.5rem] p-4">
+                            <img src="https://images.unsplash.com/photo-1581578731548-c64695ce6958?auto=format&fit=crop&q=80&w=800" class="rounded-[2rem] shadow-lg" alt="Local Service Tech">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SHARED SECTIONS -->
+        <div id="shared-sections">
+            <section id="contact" class="py-24 bg-white">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="bg-engine-teal rounded-[3rem] p-12 md:p-20 relative overflow-hidden text-white shadow-2xl">
+                        <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h2 class="text-4xl md:text-6xl font-black mb-6 leading-tight">Claim your free <span class="text-engine-orange">website demo.</span></h2>
+                                <p class="text-gray-300 text-xl mb-10 font-medium">Let us show you exactly how we'll bring more customers to your door.</p>
+                                <div class="flex flex-col gap-6">
+                                    <div class="flex items-center gap-4"><i data-lucide="mail" class="text-engine-orange w-6 h-6"></i><span class="font-medium">demo@compositingengine.com</span></div>
+                                    <div class="flex items-center gap-4"><i data-lucide="check-square" class="text-engine-orange w-6 h-6"></i><span class="font-medium">No obligation. No pushy sales.</span></div>
+                                </div>
+                            </div>
+                            <div class="bg-white p-10 rounded-3xl text-gray-900">
+                                <form class="space-y-4" onsubmit="event.preventDefault(); this.innerHTML = '<div class=\'text-center py-12\'><h4 class=\'text-2xl font-bold mb-2 text-engine-orange\'>Demo Requested!</h4><p>Check your email for your meeting invite.</p></div>'">
+                                    <input type="text" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none focus:border-engine-orange font-medium" placeholder="Business Name">
+                                    <input type="text" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none focus:border-engine-orange font-medium" placeholder="Phone Number">
+                                    <button class="w-full bg-engine-orange text-white py-4 rounded-xl font-bold text-lg hover-bg-engine-orange transition-all uppercase tracking-widest">Get My Free Demo</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-engine-orange opacity-10 rounded-full"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-1 md:col-span-2">
+                    <img src="Compositingengine logo full orange.png" alt="Logo" class="logo-img mb-8">
+                    <p class="text-gray-500 max-w-sm leading-relaxed font-medium">
+                        Helping local trades and services dominate their local market through expert web design.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="font-black mb-6 text-engine-teal uppercase tracking-widest text-sm">Explore</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm font-medium">
+                        <li><button onclick="showView('home')" class="hover:text-engine-orange">Home</button></li>
+                        <li><button onclick="showView('services')" class="hover:text-engine-orange">Services</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-black mb-6 text-engine-teal uppercase tracking-widest text-sm">Follow</h5>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:text-engine-orange shadow-sm"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:text-engine-orange shadow-sm"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-10 border-t border-gray-200 text-sm text-gray-400 font-medium text-center md:text-left">
+                <p>© 2025 Compositing Engine. Websites that work as hard as you do.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function showView(viewId) {
+            const homeView = document.getElementById('view-home');
+            const servicesView = document.getElementById('view-services');
+            
+            homeView.classList.add('hidden-view');
+            servicesView.classList.add('hidden-view');
+
+            if (viewId === 'home') {
+                homeView.classList.remove('hidden-view');
+            } else if (viewId === 'services') {
+                servicesView.classList.remove('hidden-view');
+            }
+
+            mobileMenu.classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
